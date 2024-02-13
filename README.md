@@ -1,2 +1,1 @@
-# rent-cars
-Rent cars
+# Rent cars
