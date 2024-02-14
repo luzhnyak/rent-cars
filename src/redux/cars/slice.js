@@ -27,7 +27,7 @@ const carsSlice = createSlice({
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.cars = action.payload;
+        state.items = action.payload;
       })
       .addCase(getCarByIdThunk.fulfilled, (state, action) => {
         state.isLoading = false;

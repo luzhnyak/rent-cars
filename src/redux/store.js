@@ -12,13 +12,13 @@ import {
 } from "redux-persist";
 
 import storage from "redux-persist/lib/storage";
-import { favoritesReducer } from "./favorite/slice";
+import { favoritesReducer } from "./favorites/slice";
 import { carsReducer } from "./cars/slice";
 
 const authConfig = {
   key: "favorites",
   storage,
-  whitelist: ["favorites"],
+  whitelist: ["items"],
 };
 
 const rootReducer = combineReducers({
