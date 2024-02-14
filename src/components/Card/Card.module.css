@@ -38,17 +38,29 @@
 
 .optionsWrapper {
   display: flex;
-  margin-bottom: 28px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  & :last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+  & :first-child {
+    padding-left: 0;
+  }
 }
 
 .option {
   font-size: 12px;
   color: rgba(18, 20, 23, 0.5);
+  padding: 0 6px;
+  border-right: 1px solid rgba(18, 20, 23, 0.1);
+  white-space: nowrap;
 }
 
 .btn {
   width: 274px;
   height: 44px;
+  margin-top: 28px;
   background-color: #3470ff;
   color: #fff;
   border: none;
