@@ -2,10 +2,15 @@ import React from "react";
 import css from "./Filter.module.css";
 import { filterBrandOptions } from "../../data/makes";
 import { filterPriceOptions } from "../../data/price";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Filter = () => {
   return (
     <div className={css.wrapper}>
+      <div className="">
+        <label className={css.label}>Car brand</label>
+        <Dropdown items={filterBrandOptions} defaultSelect="Enter the text" />
+      </div>
       <div className="">
         <label className={css.label}>Car brand</label>
         <select className={css.select} name="select" value="Enter the text">
@@ -18,7 +23,7 @@ const Filter = () => {
           })}
         </select>
       </div>
-      <div className="">
+      {/* <div className="">
         <label className={css.label}>Price/ 1 hour</label>
         <select className={css.select} name="select" value="To $">
           {filterPriceOptions.map((price) => {
@@ -38,7 +43,7 @@ const Filter = () => {
 
       <button className={css.btn} type="button">
         Search
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -14,6 +14,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import { favoritesReducer } from "./favorites/slice";
 import { carsReducer } from "./cars/slice";
+import { filterReducer } from "./filter/slice";
 
 const authConfig = {
   key: "favorites",
@@ -24,6 +25,7 @@ const authConfig = {
 const rootReducer = combineReducers({
   favorites: persistReducer(authConfig, favoritesReducer),
   cars: carsReducer,
+  filter: filterReducer,
 });
 
 const ignoredPersistenceActions = [
