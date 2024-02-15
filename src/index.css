@@ -1,14 +1,17 @@
 :root {
   --primary-color-white: #ffffff;
-  --primary-color-black: #2f2f2f;
-  --primary-color-blue: #407bff;
-  --secondary-color-red: #ef5050;
+  --primary-color-black: rgb(18, 20, 23);
+  --secondary-color-black: rgba(18, 20, 23, 0.5);
+
+  --primary-color-blue: #3470ff;
+  --active-color-blue: #0b44cd;
+
   --secondary-color-orange: #ff9d43;
   --secondary-color-blue-1: #ecf2ff;
   --secondary-color-blue-2: #d7e3ff;
   --secondary-color-blue-3: #9ebbff;
 
-  --backdrop-color-black: rgba(0, 0, 0, 0.8);
+  --backdrop-color-black: rgba(18, 20, 23, 0.5);
   --backdrop-color-loader: rgba(0, 0, 0, 0.5);
 }
 
@@ -53,4 +56,26 @@ img {
 
 .body-scroll-lock {
   overflow: hidden;
+  margin-right: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(18, 20, 23, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(18, 20, 23, 0.15);
+}
+
+.active {
+  color: rgba(255, 255, 255, 0.5);
 }

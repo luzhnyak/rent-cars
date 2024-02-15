@@ -1,20 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import css from "./Dropdown.module.css";
 
 import dropdownIcon from "../../images/dropdown-icon.svg";
-import { useDispatch } from "react-redux";
-import { setBrand } from "../../redux/filter/slice";
 
-const Dropdown = ({ items = [], defaultSelect }) => {
+const ListDropdown = ({ items = [], onSelect, onClose }) => {
+  const listRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === "Escape") {
+        onClose(false);
+      }
+    };
+
+    const handleClose = (event) => {
+      if (listRef.current && !listRef.current.contains(event.target)) {
+        onClose(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClose);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.addEventListener("mousedown", handleClose);
+    };
+  }, [onClose]);
+
+  return (
+    <div className={css.listWrapper} ref={listRef}>
+      <ul className={css.list}>
+        {items.map((item) => {
+          return (
+            <li key={item} className={css.item} onClick={() => onSelect(item)}>
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
   const [isOpenList, setIsOpenList] = useState(false);
-  const [selectText, setSelectText] = useState("Enter the text");
-
-  const dispatch = useDispatch();
+  const [selectText, setSelectText] = useState(defaultSelect);
 
   const handleSelect = (item) => {
-    setIsOpenList(false);
-    dispatch(setBrand(item));
+    onSelect(item);
     setSelectText(item);
+    setIsOpenList(false);
   };
 
   return (
@@ -24,19 +59,11 @@ const Dropdown = ({ items = [], defaultSelect }) => {
         <img src={dropdownIcon} alt="dropdown" />
       </button>
       {isOpenList && (
-        <ul className={css.list}>
-          {items.map((item) => {
-            return (
-              <li
-                key={item}
-                className={css.item}
-                onClick={() => handleSelect(item)}
-              >
-                {item}
-              </li>
-            );
-          })}
-        </ul>
+        <ListDropdown
+          items={items}
+          onSelect={handleSelect}
+          onClose={() => setIsOpenList(false)}
+        />
       )}
     </div>
   );

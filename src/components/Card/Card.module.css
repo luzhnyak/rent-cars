@@ -28,7 +28,7 @@
 }
 
 .model {
-  color: #3470ff;
+  color: var(--primary-color-blue);
 }
 
 .price {
@@ -61,14 +61,14 @@
   width: 274px;
   height: 44px;
   margin-top: 28px;
-  background-color: #3470ff;
-  color: #fff;
+  background-color: var(--primary-color-blue);
+  color: var(--primary-color-white);
   border: none;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   &:hover {
-    background-color: #0b44cd;
+    background-color: var(--active-color-blue);
   }
 }
 
@@ -79,15 +79,14 @@
   top: 14px;
   right: 14px;
   svg {
-    stroke: #ffffff;
+    stroke: var(--primary-color-white);
   }
   svg:hover {
-    /* fill: #3470ff; */
-    stroke: #3470ff;
+    stroke: var(--primary-color-blue);
   }
   .fav {
-    fill: #3470ff;
-    stroke: #3470ff;
+    fill: var(--primary-color-blue);
+    stroke: var(--primary-color-blue);
   }
 }
 
@@ -98,8 +97,8 @@
   top: 14px;
   right: 14px;
   svg {
-    stroke: #3470ff;
-    fill: #3470ff;
+    stroke: var(--primary-color-blue);
+    fill: var(--primary-color-blue);
   }
   svg:hover {
     fill: transparent;

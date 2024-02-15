@@ -1,10 +1,12 @@
-import { lazy, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllCarsThunk } from "./redux/cars/operations";
+import { selectPage } from "./redux/cars/selectors";
+import { selectBrand, selectPrice } from "./redux/filter/selectors";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage"));
@@ -13,9 +15,15 @@ const FavoritePage = lazy(() => import("./pages/FavoritePage"));
 function App() {
   const dispatch = useDispatch();
 
-  useState(() => {
-    dispatch(getAllCarsThunk());
-  }, [dispatch]);
+  const page = useSelector(selectPage);
+  const make = useSelector(selectBrand);
+  const rentalPrice = useSelector(selectPrice);
+
+  console.log(make);
+
+  useEffect(() => {
+    dispatch(getAllCarsThunk({ page, make, rentalPrice }));
+  }, [dispatch, page, make, rentalPrice]);
 
   return (
     <Routes>

@@ -1,3 +1,11 @@
+.brandWrapper {
+  width: 224px;
+}
+
+.priceWrapper {
+  width: 125px;
+}
+
 .wrapper {
   display: flex;
   gap: 18px;
@@ -51,7 +59,7 @@
   gap: 10px;
   border-radius: 6px;
   border: 1px solid #d7e3ff;
-  color: #407bff;
+  color: var(--primary-color-blue);
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -94,14 +102,14 @@
   width: 136px;
   height: 48px;
   border-radius: 12px;
-  background-color: rgb(52, 112, 255);
-  color: #ffffff;
+  background-color: var(--primary-color-blue);
+  color: var(--primary-color-white);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0%;
   border: none;
   margin-top: auto;
   &:hover {
-    background-color: #0b44cd;
+    background-color: var(--active-color-blue);
   }
 }

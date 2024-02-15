@@ -6,9 +6,9 @@ import { getAllCars, getCarsById } from "../../services/carsApi";
 
 export const getAllCarsThunk = createAsyncThunk(
   "cars/getAllCars",
-  async (_, thunkApi) => {
+  async (params, thunkApi) => {
     try {
-      const response = await getAllCars();
+      const response = await getAllCars(params);
       return response;
     } catch (error) {
       // const errorObj = handleApiError(error);

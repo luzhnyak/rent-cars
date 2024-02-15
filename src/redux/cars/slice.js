@@ -3,6 +3,7 @@ import { getAllCarsThunk, getCarByIdThunk } from "./operations";
 
 const carsInitialState = {
   items: [],
+  page: 1,
   currentCar: null,
   isLoading: false,
   error: null,

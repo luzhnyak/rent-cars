@@ -1,0 +1,25 @@
+.header {
+  background-color: var(--primary-color-blue);
+  height: 60px;
+  margin-bottom: 40px;
+}
+
+.nav {
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  height: 100%;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: var(--primary-color-white);
+  &:hover {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const filterInitialState = {
   brand: null,
+  price: null,
 };
 
 const filterSlice = createSlice({
@@ -11,8 +12,11 @@ const filterSlice = createSlice({
     setBrand(state, action) {
       state.brand = action.payload;
     },
+    setPrice(state, action) {
+      state.price = action.payload;
+    },
   },
 });
 
-export const { setBrand } = filterSlice.actions;
+export const { setBrand, setPrice } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

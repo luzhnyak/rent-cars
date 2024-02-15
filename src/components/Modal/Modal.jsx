@@ -6,8 +6,31 @@ import closeIcon from "../../images/close-icon.svg";
 
 const modalRoot = document.querySelector("#root-modal");
 
-const Modal = ({ onClose }) => {
+const Modal = ({ onClose, data }) => {
   const modalRef = useRef(null);
+
+  const {
+    id,
+    make,
+    model,
+    year,
+    address,
+    accessories,
+    functionalities,
+    rentalCompany,
+    rentalPrice,
+    img,
+    type,
+    mileage,
+    engineSize,
+    fuelConsumption,
+    description,
+    rentalConditions,
+  } = data;
+
+  const city = address.split(",")[1];
+  const country = address.split(",")[2];
+  const conditions = rentalConditions.split("\n");
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -24,14 +47,16 @@ const Modal = ({ onClose }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     document.addEventListener("mousedown", handleClose);
+    document.body.classList.add("body-scroll-lock");
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.addEventListener("mousedown", handleClose);
+      document.body.classList.remove("body-scroll-lock");
     };
   }, [onClose]);
 
   return createPortal(
-    <div css={css.backdrop}>
+    <div className={css.backdrop}>
       <div
         ref={modalRef}
         className={css.modal}
@@ -40,7 +65,82 @@ const Modal = ({ onClose }) => {
         <button className={css.btnClose} onClick={() => onClose(false)}>
           <img src={closeIcon} width={24} alt="Close" />
         </button>
-        <div className={css.content}>Test</div>
+        <div className={css.content}>
+          <img className={css.image} src={img} alt={model} />
+          <h3 className={css.title}>
+            {`${make} `}
+            <span className={css.model}>{model}</span>
+            {`, ${year}`}
+          </h3>
+          <div className={css.optionsWrapper}>
+            <span className={css.option}>{city}</span>
+            <span className={css.option}>{country}</span>
+            <span className={css.option}>Id: {id}</span>
+            <span className={css.option}>Year: {year}</span>
+            <span className={css.option}>Type: {type}</span>
+          </div>
+
+          <div className={css.optionsWrapper}>
+            <span className={css.option}>
+              Fuel Consumption:{fuelConsumption}
+            </span>
+            <span className={css.option}>
+              Engine Size: {engineSize}
+              {rentalCompany}
+            </span>
+          </div>
+
+          <p className={css.description}>{description}</p>
+
+          <h4 className={css.optionsTitle}>Accessories and functionalities:</h4>
+
+          <div className={css.optionsWrapper}>
+            {accessories.map((item, i) => {
+              return (
+                <span key={i} className={css.option}>
+                  {item}
+                </span>
+              );
+            })}
+          </div>
+
+          <div className={css.optionsWrapper}>
+            {functionalities.map((item, i) => {
+              return (
+                <span key={i} className={css.option}>
+                  {item}
+                </span>
+              );
+            })}
+          </div>
+
+          <h4 className={css.optionsTitle}>Rental Conditions: </h4>
+
+          <div className={css.conditionsWrapper}>
+            <span className={css.conditionsItem}>
+              {conditions[0].split(":")[0]}:{" "}
+              <span className={css.blue}>{conditions[0].split(":")[1]}</span>
+            </span>
+            <span className={css.conditionsItem}>{conditions[1]}</span>
+          </div>
+
+          <div className={css.conditionsWrapper}>
+            <span className={css.conditionsItem}>{conditions[2]}</span>
+            <span className={css.conditionsItem}>
+              Mileage:{" "}
+              <span className={css.blue}>
+                {new Intl.NumberFormat("en-US").format(mileage)}
+              </span>
+            </span>
+            <span className={css.conditionsItem}>
+              Price: <span className={css.blue}>{rentalPrice}$</span>
+            </span>
+          </div>
+
+          <button className={css.btn} type="button">
+            Rental car
+          </button>
+        </div>
       </div>
     </div>,
     modalRoot
