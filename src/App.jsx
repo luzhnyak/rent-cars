@@ -6,7 +6,7 @@ import SharedLayout from "./components/SharedLayout/SharedLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCarsThunk } from "./redux/cars/operations";
 import { selectPage } from "./redux/cars/selectors";
-import { selectBrand, selectPrice } from "./redux/filter/selectors";
+import { selectBrand } from "./redux/filter/selectors";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage"));
@@ -17,13 +17,12 @@ function App() {
 
   const page = useSelector(selectPage);
   const make = useSelector(selectBrand);
-  const rentalPrice = useSelector(selectPrice);
 
   console.log(make);
 
   useEffect(() => {
-    dispatch(getAllCarsThunk({ page, make, rentalPrice }));
-  }, [dispatch, page, make, rentalPrice]);
+    dispatch(getAllCarsThunk({ page, make }));
+  }, [dispatch, page, make]);
 
   return (
     <Routes>

@@ -66,38 +66,6 @@
   outline: none;
 }
 
-.inputStyle:hover,
-.inputStyle:focus {
-  outline-offset: var(--secondary-color-orange);
-  border-color: var(--secondary-color-orange);
-}
-
-.inputStyle select option:hover,
-.inputStyle select option:focus,
-.inputStyle select option:active {
-  outline-offset: var(--secondary-color-orange);
-  border-color: var(--secondary-color-orange);
-}
-
-.inputFrom {
-  width: 160px;
-  height: 48px;
-  border-radius: 14px 0px 0px 14px;
-  background: rgb(247, 247, 251);
-  border: none;
-  border-right: 1px solid rgba(138, 138, 137, 0.2);
-  padding: 14px 24px;
-}
-
-.inputTo {
-  width: 160px;
-  height: 48px;
-  border-radius: 0px 14px 14px 0px;
-  background: rgb(247, 247, 251);
-  border: none;
-  padding: 14px 24px;
-}
-
 .btn {
   width: 136px;
   height: 48px;
@@ -112,4 +80,46 @@
   &:hover {
     background-color: var(--active-color-blue);
   }
+}
+
+.inputWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.inputLabel {
+  position: absolute;
+  left: 24px;
+  top: 12px;
+}
+
+.inputFrom {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 160px;
+  height: 48px;
+  border-radius: 14px 0px 0px 14px;
+  background: rgb(247, 247, 251);
+  border: none;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  padding: 14px 24px;
+  padding-left: 70px;
+  outline: none;
+}
+
+.inputTo {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 160px;
+  height: 48px;
+  border-radius: 0px 14px 14px 0px;
+  background: rgb(247, 247, 251);
+  border: none;
+  padding: 14px 24px;
+  padding-left: 50px;
+  outline: none;
 }
