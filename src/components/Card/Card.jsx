@@ -22,8 +22,8 @@ const Card = ({ data }) => {
     mileage,
   } = data;
 
-  const city = address.split(",")[1];
-  const country = address.split(",")[2];
+  const city = address?.split(",")[1];
+  const country = address?.split(",")[2];
 
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ const Card = ({ data }) => {
   const favoritesCars = useSelector(selectAllFavoritesCars);
 
   useEffect(() => {
-    if (favoritesCars.includes(id)) {
+    if (favoritesCars.find((car) => car.id === id)) {
       setIsFavorite(true);
     } else {
       setIsFavorite(false);
@@ -41,10 +41,10 @@ const Card = ({ data }) => {
   }, [favoritesCars, dispatch]);
 
   const handleFavClick = () => {
-    if (favoritesCars.includes(id)) {
-      dispatch(deleteCar(id));
+    if (favoritesCars.find((car) => car.id === id)) {
+      dispatch(deleteCar(data.id));
     } else {
-      dispatch(addCar(id));
+      dispatch(addCar(data));
     }
   };
 

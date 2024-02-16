@@ -16,11 +16,17 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  width: 274px;
 }
 
 .title {
   font-size: 16px;
   font-weight: 500;
+  white-space: nowrap;
+  width: 230px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .make {

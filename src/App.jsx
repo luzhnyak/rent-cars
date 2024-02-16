@@ -18,8 +18,6 @@ function App() {
   const page = useSelector(selectPage);
   const make = useSelector(selectBrand);
 
-  console.log(make);
-
   useEffect(() => {
     dispatch(getAllCarsThunk({ page, make }));
   }, [dispatch, page, make]);

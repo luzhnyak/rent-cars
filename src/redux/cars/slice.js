@@ -22,13 +22,18 @@ const handleRejected = (state, action) => {
 const carsSlice = createSlice({
   name: "cars",
   initialState: carsInitialState,
+  reducers: {
+    incPage(state, _) {
+      state.page = state.page + 1;
+    },
+  },
 
   extraReducers: (builder) =>
     builder
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.items.push(...action.payload);
       })
       .addCase(getCarByIdThunk.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -45,4 +50,5 @@ const carsSlice = createSlice({
       ),
 });
 
+export const { incPage } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
