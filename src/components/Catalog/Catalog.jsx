@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./Catalog.module.css";
 
 import { useSelector } from "react-redux";

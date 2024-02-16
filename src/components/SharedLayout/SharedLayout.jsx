@@ -3,8 +3,6 @@ import { Suspense } from "react";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 
-import React from "react";
-
 const SharedLayout = () => {
   return (
     <>

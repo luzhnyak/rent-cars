@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import css from "./Dropdown.module.css";
 
 import dropdownIcon from "../../images/dropdown-icon.svg";
 
-const ListDropdown = ({ items = [], onSelect, onClose }) => {
+const ListDropdown = ({ items, onSelect, onClose }) => {
   const listRef = useRef(null);
 
   useEffect(() => {

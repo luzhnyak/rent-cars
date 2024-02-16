@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import css from "./Filter.module.css";
 import { filterBrandOptions } from "../../data/makes";
 import { filterPriceOptions } from "../../data/price";
 import Dropdown from "../Dropdown/Dropdown";
 
 import { useDispatch } from "react-redux";
-import { setBrand, setPrice } from "../../redux/filter/slice";
+// import { setBrand, setPrice } from "../../redux/filter/slice";
 import { useSearchParams } from "react-router-dom";
 
 const Filter = () => {
