@@ -13,10 +13,12 @@ const Favorites = () => {
   return (
     <>
       <div className={css.wrapper}>
-        {cars.length &&
-          cars.map((car) => {
-            return <Card key={car.id} data={car} />;
-          })}
+        <section className={css.sectionCatalog}>
+          {cars.length &&
+            cars.map((car) => {
+              return <Card key={car.id} data={car} />;
+            })}
+        </section>
       </div>
     </>
   );

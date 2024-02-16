@@ -26,16 +26,18 @@ const Catalog = () => {
 
   return (
     <>
-      <Filter />
       <div className={css.wrapper}>
-        {filteredCars &&
-          filteredCars.map((car) => {
-            return <Card key={car.id} data={car} />;
-          })}
+        <Filter />
+        <section className={css.sectionCatalog}>
+          {filteredCars &&
+            filteredCars.map((car) => {
+              return <Card key={car.id} data={car} />;
+            })}
+        </section>
+        <button className={css.btn} type="button" onClick={handleLoadMore}>
+          Load more
+        </button>
       </div>
-      <button className={css.btn} type="button" onClick={handleLoadMore}>
-        Load more
-      </button>
       {isLoading && <Loader />}
     </>
   );
