@@ -1,0 +1,1 @@
+import{b as a,j as r}from"./index-tkOkBo6n.js";import{s as t,C as n}from"./Card-DTnX4LpO.js";const o="_wrapper_1wirt_1",i={wrapper:o},p=()=>{const s=a(t);return r.jsx(r.Fragment,{children:r.jsx("div",{className:i.wrapper,children:s.length&&s.map(e=>r.jsx(n,{data:e},e.id))})})},m=()=>r.jsx("main",{children:r.jsx(p,{})});export{m as default};
