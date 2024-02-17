@@ -58,7 +58,7 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
       <button className={css.btn} onClick={() => setIsOpenList(!isOpenList)}>
         {selectText}
         <svg width="20" height="20" alt="dropdown">
-          <use xlinkHref={`${Icons}#icon-dropdown`} />
+          <use href={"icons.svg#icon-dropdown"} />
         </svg>
       </button>
       {isOpenList && (
