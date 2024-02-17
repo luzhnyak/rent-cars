@@ -20,8 +20,3 @@ export const getAllCars = async (params) => {
 
   return data;
 };
-
-export const getCarsById = async (id) => {
-  const { data } = await axios(`/cars/${id}`);
-  return data;
-};

@@ -1,6 +1,7 @@
-.wrapper {
-  margin-top: 40px;
-  margin-bottom: 40px;
+.container {
+  max-width: 1216px;
+  margin: 40px auto;
+  padding: 0 16px;
 }
 
 .sectionCatalog {
@@ -9,10 +10,7 @@
   flex-wrap: wrap;
   column-gap: 29px;
   row-gap: 50px;
-  width: 1184px;
   margin-bottom: 100px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .btn {

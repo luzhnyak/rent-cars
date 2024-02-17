@@ -649,30 +649,30 @@
         "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
         "mileage": 6234
     },{
-        "id": "1026",
-        "year": 2009,
-        "make": "Lincoln",
-        "model": "Navigator L",
+        "id": "1718",
+        "year": 2016,
+        "make": "BMW",
+        "model": "X5",
         "type": "SUV",
-        "img": "https://ftp.goit.study/img/cars-test-task/lincoln_navigator_l.jpeg",
-        "description": "The Lincoln Navigator L is a luxurious and spacious SUV with a refined interior and advanced technology features.",
-        "fuelConsumption": "18.2",
-        "engineSize": "5.4L V8",
+        "img": "https://luzhnyak.github.io/rent-cars/img/bmw-x5.jpg",
+        "description": "The BMW X5 is a luxury SUV known for its powerful performance, elegant design, and premium features.",
+        "fuelConsumption": "21.8",
+        "engineSize": "3.0L I6",
         "accessories": [
-            "Premium leather seats",
-            "THX II Certified audio system",
-            "Power-deployable running boards"
+            "SensaTec upholstery",
+            "iDrive infotainment system",
+            "Panoramic moonroof"
         ],
         "functionalities": [
-            "AdvanceTrac with Roll Stability Control",
-            "Voice-Activated Navigation System",
-            "Power liftgate"
+            "xDrive all-wheel-drive system",
+            "Dynamic Stability Control",
+            "Parking Assistant"
         ],
-        "rentalPrice": 50,
-        "rentalCompany": "Elite Car Rentals",
-        "address": "123 Example Boulevard, Kharkiv, Ukraine",
+        "rentalPrice": "$70",
+        "rentalCompany": "Sixt Rent a Car",
+        "address": "505 Luxury Lane, Kharkiv, Ukraine",
         "rentalConditions": "Minimum age: 25\nValid driver's license\nInsurance coverage required",
-        "mileage": 6173
+        "mileage": 5432
     },
     {
         "id": "1027",

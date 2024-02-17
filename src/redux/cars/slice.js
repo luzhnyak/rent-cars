@@ -1,30 +1,28 @@
-import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getAllCarsThunk, getCarByIdThunk } from "./operations";
+import { createSlice } from "@reduxjs/toolkit";
+import { getAllCarsThunk } from "./operations";
 
 const carsInitialState = {
   items: [],
   page: 1,
-  currentCar: null,
+  brand: null,
   isLoading: false,
   error: null,
-};
-
-const handlePending = (state) => {
-  state.isLoading = true;
-  state.error = null;
-};
-
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
 };
 
 const carsSlice = createSlice({
   name: "cars",
   initialState: carsInitialState,
   reducers: {
+    resetPage(state, _) {
+      state.page = 1;
+      state.items = [];
+    },
     incPage(state, _) {
       state.page = state.page + 1;
+    },
+    resetCars(state, _) {
+      state.page = 1;
+      state.items = [];
     },
   },
 
@@ -35,20 +33,15 @@ const carsSlice = createSlice({
         state.error = null;
         state.items.push(...action.payload);
       })
-      .addCase(getCarByIdThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
+      .addCase(getAllCarsThunk.pending, (state, _) => {
+        state.isLoading = true;
         state.error = null;
-        state.currentCar = action.payload;
       })
-      .addMatcher(
-        isAnyOf(getAllCarsThunk.pending, getCarByIdThunk.pending),
-        handlePending
-      )
-      .addMatcher(
-        isAnyOf(getAllCarsThunk.rejected, getCarByIdThunk.rejected),
-        handleRejected
-      ),
+      .addCase(getAllCarsThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      }),
 });
 
-export const { incPage } = carsSlice.actions;
+export const { resetPage, incPage, resetCars } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

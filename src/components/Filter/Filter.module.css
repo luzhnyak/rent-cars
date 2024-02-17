@@ -1,17 +1,17 @@
+.container {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
 .brandWrapper {
   width: 224px;
 }
 
 .priceWrapper {
   width: 125px;
-}
-
-.wrapper {
-  display: flex;
-  gap: 18px;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 50px;
 }
 
 .label {
@@ -107,6 +107,9 @@
   padding: 14px 24px;
   padding-left: 70px;
   outline: none;
+  @media only screen and (max-width: 472px) {
+    width: 140px;
+  }
 }
 
 .inputTo {
@@ -122,4 +125,7 @@
   padding: 14px 24px;
   padding-left: 50px;
   outline: none;
+  @media only screen and (max-width: 472px) {
+    width: 140px;
+  }
 }

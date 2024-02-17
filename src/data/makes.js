@@ -1,4 +1,5 @@
 export const filterBrandOptions = [
+  "All",
   "Buick",
   "Volvo",
   "HUMMER",
