@@ -24,8 +24,8 @@ const Catalog = () => {
 
   const make = searchParams.get("make");
   const price = searchParams.get("price");
-  const from = searchParams.get("from");
-  const to = searchParams.get("to");
+  const from = searchParams.get("from") ?? 1;
+  const to = searchParams.get("to") ?? 999999999;
 
   const cars = useSelector(selectAllCars);
   const isLoading = useSelector(selectLoading);
@@ -33,10 +33,6 @@ const Catalog = () => {
 
   const [filteredCars, setFilteredCars] = useState([]);
   const dispatch = useDispatch();
-
-  // const [searchParams, _] = useSearchParams();
-  //  const page = useSelector(selectPage);
-  //  const make = searchParams.get("make") ?? "";
 
   useEffect(() => {
     dispatch(getAllCarsThunk({ page, make }));

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
 import css from "./Dropdown.module.css";
-import Icons from "../../images/icons.svg";
 
 const ListDropdown = ({ items, onSelect, onClose }) => {
   const listRef = useRef(null);
@@ -42,7 +41,6 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
   );
 };
 
-// eslint-disable-next-line react/prop-types
 const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
   const [isOpenList, setIsOpenList] = useState(false);
   const [selectText, setSelectText] = useState(defaultSelect);
@@ -58,7 +56,7 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
       <button className={css.btn} onClick={() => setIsOpenList(!isOpenList)}>
         {selectText}
         <svg width="20" height="20" alt="dropdown">
-          <use href={"icons.svg#icon-dropdown"} />
+          <use href={"./icons.svg#icon-dropdown"} />
         </svg>
       </button>
       {isOpenList && (

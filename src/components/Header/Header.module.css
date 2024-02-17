@@ -4,15 +4,28 @@
 }
 
 .nav {
+  max-width: 1216px;
   height: 60px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 70px;
+  gap: 50px;
   height: 100%;
+}
+
+.menuItem:first-child {
+  margin-right: auto;
 }
 
 .menuLink {
@@ -23,8 +36,4 @@
   &:hover {
     color: rgba(255, 255, 255, 0.6);
   }
-}
-
-.active {
-  color: rgba(255, 255, 255, 0.5);
 }

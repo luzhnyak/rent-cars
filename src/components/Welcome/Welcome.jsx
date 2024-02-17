@@ -1,5 +1,5 @@
 import css from "./Welcome.module.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
   return (
@@ -10,9 +10,9 @@ const Welcome = () => {
           Navigate your journey, choose our rental for your comfort
         </p>
       </div>
-      <NavLink className={css.btn} to="/catalog">
-        Catalog
-      </NavLink>
+      <Link className={css.btn} to="/catalog">
+        Start Your Journey
+      </Link>
     </main>
   );
 };
