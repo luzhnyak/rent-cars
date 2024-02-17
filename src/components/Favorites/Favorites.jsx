@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectAllCars, selectLoading } from "../../redux/cars/selectors";
+import { useSelector } from "react-redux";
 
 import css from "./Favorites.module.css";
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./Card.module.css";
 // import FavNormalIcon from "../../images/fav-normal.svg";
 // import FavActiveIcon from "../../images/fav-active.svg";
@@ -38,7 +38,7 @@ const Card = ({ data }) => {
     } else {
       setIsFavorite(false);
     }
-  }, [favoritesCars, dispatch]);
+  }, [favoritesCars, dispatch, id]);
 
   const handleFavClick = () => {
     if (favoritesCars.find((car) => car.id === id)) {

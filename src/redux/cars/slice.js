@@ -13,14 +13,14 @@ const carsSlice = createSlice({
   name: "cars",
   initialState: carsInitialState,
   reducers: {
-    resetPage(state, _) {
+    resetPage(state) {
       state.page = 1;
       state.items = [];
     },
-    incPage(state, _) {
+    incPage(state) {
       state.page = state.page + 1;
     },
-    resetCars(state, _) {
+    resetCars(state) {
       state.page = 1;
       state.items = [];
     },
@@ -31,9 +31,13 @@ const carsSlice = createSlice({
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items.push(...action.payload);
+        if (state.page === 1) {
+          state.items = action.payload;
+        } else {
+          state.items.push(...action.payload);
+        }
       })
-      .addCase(getAllCarsThunk.pending, (state, _) => {
+      .addCase(getAllCarsThunk.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })

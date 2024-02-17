@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import css from "./Filter.module.css";
 import { filterBrandOptions } from "../../data/makes";
 import { filterPriceOptions } from "../../data/price";
@@ -16,7 +16,7 @@ const Filter = () => {
   const [from, setFrom] = useState(searchParams.get("from"));
   const [to, setTo] = useState(searchParams.get("to"));
 
-  const [params, setParams] = useState({
+  const [params] = useState({
     make: searchParams.get("make") ?? "",
     price: searchParams.get("price") ?? "",
     from: searchParams.get("from") ?? "",

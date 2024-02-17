@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import css from "./Catalog.module.css";
 
-import { useDispatch, useSelector } from "react-redux";
+import { getAllCarsThunk } from "../../redux/cars/operations";
+import { incPage } from "../../redux/cars/slice";
+import { resetCars } from "../../redux/cars/slice";
+
 import {
   selectAllCars,
   selectLoading,
@@ -9,13 +16,11 @@ import {
 
 import Card from "../Card/Card";
 import Filter from "../Filter/Filter";
-import { useEffect, useState } from "react";
-import { incPage } from "../../redux/cars/slice";
+
 import Loader from "../Loader/Loader";
-import { useSearchParams } from "react-router-dom";
 
 const Catalog = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const make = searchParams.get("make");
   const price = searchParams.get("price");
@@ -28,6 +33,20 @@ const Catalog = () => {
 
   const [filteredCars, setFilteredCars] = useState([]);
   const dispatch = useDispatch();
+
+  // const [searchParams, _] = useSearchParams();
+  //  const page = useSelector(selectPage);
+  //  const make = searchParams.get("make") ?? "";
+
+  useEffect(() => {
+    dispatch(getAllCarsThunk({ page, make }));
+  }, [dispatch, page, make]);
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetCars());
+    };
+  }, [dispatch]);
 
   useEffect(() => {
     let tempCars = [...cars];

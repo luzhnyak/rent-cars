@@ -3,6 +3,7 @@ import css from "./Dropdown.module.css";
 
 import dropdownIcon from "../../images/dropdown-icon.svg";
 
+// eslint-disable-next-line react/prop-types
 const ListDropdown = ({ items, onSelect, onClose }) => {
   const listRef = useRef(null);
 
@@ -30,6 +31,7 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
   return (
     <div className={css.listWrapper} ref={listRef}>
       <ul className={css.list}>
+        {/* eslint-disable-next-line react/prop-types */}
         {items.map((item) => {
           return (
             <li key={item} className={css.item} onClick={() => onSelect(item)}>
@@ -42,6 +44,7 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
   const [isOpenList, setIsOpenList] = useState(false);
   const [selectText, setSelectText] = useState(defaultSelect);
