@@ -90,7 +90,7 @@ const Card = ({ data }) => {
         onClick={(id) => handleFavClick(id)}
       >
         <svg width="18" height="18">
-          <use href={`${Icons}#icon-fav`} />
+          <use xlinkHref={`${Icons}#icon-fav`} />
         </svg>
       </button>
       {isShowModal && <Modal onClose={setIsShowModal} data={data} />}

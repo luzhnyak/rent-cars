@@ -16,7 +16,7 @@ export const getAllCars = async (params) => {
   // Отримання рядка з параметрами гет-запиту
   var queryString = searchParams.toString();
 
-  const { data } = await axios(`/cars?limit=12&${queryString}`);
+  const { data } = await axios(`/adverts?limit=12&${queryString}`);
 
   return data;
 };
