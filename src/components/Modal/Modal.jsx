@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import css from "./Modal.module.css";
-import closeIcon from "../../images/close-icon.svg";
+import Icons from "../../images/icons.svg";
 
 const modalRoot = document.querySelector("#root-modal");
 
@@ -63,7 +63,9 @@ const Modal = ({ onClose, data }) => {
         onClick={(event) => event.stopPropagation()}
       >
         <button className={css.btnClose} onClick={() => onClose(false)}>
-          <img src={closeIcon} width={24} alt="Close" />
+          <svg width="24" height="24" alt="Close">
+            <use href={`${Icons}#icon-close`} />
+          </svg>
         </button>
         <div className={css.content}>
           <img className={css.image} src={img} alt={model} />
@@ -82,7 +84,7 @@ const Modal = ({ onClose, data }) => {
 
           <div className={css.optionsWrapper}>
             <span className={css.option}>
-              Fuel Consumption:{fuelConsumption}
+              Fuel Consumption: {fuelConsumption}
             </span>
             <span className={css.option}>
               Engine Size: {engineSize}
@@ -137,9 +139,9 @@ const Modal = ({ onClose, data }) => {
             </span>
           </div>
 
-          <button className={css.btn} type="button">
+          <a className={css.btn} href="tel:+380730000000">
             Rental car
-          </button>
+          </a>
         </div>
       </div>
     </div>,

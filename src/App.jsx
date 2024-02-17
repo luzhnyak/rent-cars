@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 
@@ -14,6 +14,7 @@ function App() {
         <Route index element={<HomePage />}></Route>
         <Route path="catalog" element={<CatalogPage />}></Route>
         <Route path="favorites" element={<FavoritePage />}></Route>
+        <Route path="*" element={<Navigate to="/" />}></Route>
       </Route>
     </Routes>
   );

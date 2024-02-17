@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+
 import css from "./Dropdown.module.css";
+import Icons from "../../images/icons.svg";
 
-import dropdownIcon from "../../images/dropdown-icon.svg";
-
-// eslint-disable-next-line react/prop-types
 const ListDropdown = ({ items, onSelect, onClose }) => {
   const listRef = useRef(null);
 
@@ -31,7 +30,6 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
   return (
     <div className={css.listWrapper} ref={listRef}>
       <ul className={css.list}>
-        {/* eslint-disable-next-line react/prop-types */}
         {items.map((item) => {
           return (
             <li key={item} className={css.item} onClick={() => onSelect(item)}>
@@ -59,7 +57,9 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
     <div className={css.wrapper}>
       <button className={css.btn} onClick={() => setIsOpenList(!isOpenList)}>
         {selectText}
-        <img src={dropdownIcon} alt="dropdown" />
+        <svg width="20" height="20" alt="dropdown">
+          <use href={`${Icons}#icon-dropdown`} />
+        </svg>
       </button>
       {isOpenList && (
         <ListDropdown

@@ -15,6 +15,16 @@
   background-color: #f7f7fb;
   border: none;
   padding: 14px 18px;
+  svg {
+    stroke: var(--primary-color-black);
+    fill: transparent;
+  }
+}
+
+.btn:hover {
+  svg {
+    stroke: var(--secondary-color-black);
+  }
 }
 
 .listWrapper {

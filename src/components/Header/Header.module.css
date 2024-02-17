@@ -11,11 +11,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 70px;
   height: 100%;
 }
 
 .menuLink {
+  font-size: 20px;
+  font-weight: 600;
   text-decoration: none;
   color: var(--primary-color-white);
   &:hover {
