@@ -2,8 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import css from "./Modal.module.css";
-
-import Icons from "../../assets/icons.svg";
+import Icon from "../Icon/Icon";
 
 const modalRoot = document.querySelector("#root-modal");
 
@@ -63,10 +62,15 @@ const Modal = ({ onClose, data }) => {
         className={css.modal}
         onClick={(event) => event.stopPropagation()}
       >
-        <button className={css.btnClose} onClick={() => onClose(false)}>
-          <svg width="24" height="24" alt="Close">
+        <button
+          className={css.btnClose}
+          onClick={() => onClose(false)}
+          title="Close"
+        >
+          <Icon id="icon-close" width="24" height="24" />
+          {/* <svg width="24" height="24" alt="Close">
             <use href={`${Icons}#icon-close`} />
-          </svg>
+          </svg> */}
         </button>
         <div className={css.content}>
           <img className={css.image} src={img} alt={model} />
