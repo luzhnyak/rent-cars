@@ -33,6 +33,10 @@ const Filter = () => {
   }
 
   const handleSelectBrand = async (item) => {
+    if (!params.make && item === "All") {
+      return;
+    }
+
     dispatch(resetCars());
 
     if (item === "All") {

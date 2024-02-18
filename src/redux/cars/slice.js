@@ -13,10 +13,6 @@ const carsSlice = createSlice({
   name: "cars",
   initialState: carsInitialState,
   reducers: {
-    resetPage(state) {
-      state.page = 1;
-      state.items = [];
-    },
     incPage(state) {
       state.page = state.page + 1;
     },
@@ -47,5 +43,5 @@ const carsSlice = createSlice({
       }),
 });
 
-export const { resetPage, incPage, resetCars } = carsSlice.actions;
+export const { incPage, resetCars } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

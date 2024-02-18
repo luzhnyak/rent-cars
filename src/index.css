@@ -63,7 +63,6 @@ img {
 
 .body-scroll-lock {
   overflow: hidden;
-  margin-right: 8px;
 }
 
 ::-webkit-scrollbar {
