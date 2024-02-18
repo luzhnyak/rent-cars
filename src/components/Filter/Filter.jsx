@@ -1,12 +1,15 @@
 import { useState } from "react";
-import css from "./Filter.module.css";
-import { filterBrandOptions } from "../../data/makes";
-import { filterPriceOptions } from "../../data/price";
-import Dropdown from "../Dropdown/Dropdown";
-
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+
+import css from "./Filter.module.css";
+
 import { resetCars } from "../../redux/cars/slice";
+
+import { filterBrandOptions } from "../../data/makes";
+import { filterPriceOptions } from "../../data/price";
+
+import Dropdown from "../Dropdown/Dropdown";
 
 const Filter = () => {
   const dispatch = useDispatch();

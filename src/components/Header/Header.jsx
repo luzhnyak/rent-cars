@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 import css from "./Header.module.css";
+import IconCar from "../../images/car.svg";
 
 const Header = () => {
   return (
@@ -10,9 +11,7 @@ const Header = () => {
           <li className={css.menuItem}>
             <Link className={css.menuLink} to="/">
               <div className={css.logo}>
-                <svg width="40" height="40">
-                  <use href={"./icons.svg#icon-car"} />
-                </svg>
+                <img src={IconCar} width="40" height="40" />
                 <span className={css.logoText}>ExpressWheels</span>
               </div>
             </Link>

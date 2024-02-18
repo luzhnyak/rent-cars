@@ -54,6 +54,6 @@
   line-height: 20px;
   margin-bottom: 8px;
   &:hover {
-    color: #121417;
+    color: var(--primary-color-black);
   }
 }

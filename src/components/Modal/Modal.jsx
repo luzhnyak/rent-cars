@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 
 import css from "./Modal.module.css";
 
+import Icons from "../../assets/icons.svg";
+
 const modalRoot = document.querySelector("#root-modal");
 
 const Modal = ({ onClose, data }) => {
@@ -63,7 +65,7 @@ const Modal = ({ onClose, data }) => {
       >
         <button className={css.btnClose} onClick={() => onClose(false)}>
           <svg width="24" height="24" alt="Close">
-            <use xlinkHref={"./icons.svg#icon-close"} />
+            <use href={`${Icons}#icon-close`} />
           </svg>
         </button>
         <div className={css.content}>

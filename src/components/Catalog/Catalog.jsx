@@ -5,9 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import css from "./Catalog.module.css";
 
 import { getAllCarsThunk } from "../../redux/cars/operations";
-import { incPage } from "../../redux/cars/slice";
-import { resetCars } from "../../redux/cars/slice";
-
+import { resetCars, incPage } from "../../redux/cars/slice";
 import {
   selectAllCars,
   selectLoading,
@@ -16,7 +14,6 @@ import {
 
 import Card from "../Card/Card";
 import Filter from "../Filter/Filter";
-
 import Loader from "../Loader/Loader";
 
 const Catalog = () => {

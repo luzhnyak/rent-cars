@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import css from "./Favorites.module.css";
 
 import { selectAllFavoritesCars } from "../../redux/favorites/selectors";
 
 import Card from "../Card/Card";
-import { Link } from "react-router-dom";
 
 const Favorites = () => {
   const cars = useSelector(selectAllFavoritesCars);
