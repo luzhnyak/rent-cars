@@ -16,12 +16,21 @@
   gap: 16px;
 }
 
+.logoText {
+  @media only screen and (max-width: 475px) {
+    display: none;
+  }
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
   height: 100%;
+  @media only screen and (max-width: 475px) {
+    gap: 40px;
+  }
 }
 
 .menuItem:first-child {

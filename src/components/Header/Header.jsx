@@ -13,7 +13,7 @@ const Header = () => {
                 <svg width="40" height="40">
                   <use href={"./icons.svg#icon-car"} />
                 </svg>
-                ExpressWheels
+                <span className={css.logoText}>ExpressWheels</span>
               </div>
             </Link>
           </li>
