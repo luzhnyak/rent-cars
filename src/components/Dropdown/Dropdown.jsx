@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import css from "./Dropdown.module.css";
+import Icon from "../Icon/Icon";
 
 const ListDropdown = ({ items, onSelect, onClose }) => {
   const listRef = useRef(null);
@@ -55,9 +56,7 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
     <div className={css.wrapper}>
       <button className={css.btn} onClick={() => setIsOpenList(!isOpenList)}>
         {selectText}
-        <svg width="20" height="20" alt="dropdown">
-          <use href={"./icons.svg#icon-dropdown"} />
-        </svg>
+        <Icon id="icon-dropdown" width="20" height="20" />
       </button>
       {isOpenList && (
         <ListDropdown

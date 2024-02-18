@@ -7,6 +7,7 @@ import { selectAllFavoritesCars } from "../../redux/favorites/selectors";
 import css from "./Card.module.css";
 
 import Modal from "../Modal/Modal";
+import Icon from "../Icon/Icon";
 
 const Card = ({ data }) => {
   const {
@@ -88,9 +89,7 @@ const Card = ({ data }) => {
         className={isFavorite ? css.btnFavActive : css.btnFav}
         onClick={(id) => handleFavClick(id)}
       >
-        <svg width="18" height="18">
-          <use href={"./icons.svg#icon-fav"} />
-        </svg>
+        <Icon id="icon-fav" width="18" height="18" />
       </button>
       {isShowModal && <Modal onClose={setIsShowModal} data={data} />}
     </div>

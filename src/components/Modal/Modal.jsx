@@ -68,9 +68,6 @@ const Modal = ({ onClose, data }) => {
           title="Close"
         >
           <Icon id="icon-close" width="24" height="24" />
-          {/* <svg width="24" height="24" alt="Close">
-            <use href={`${Icons}#icon-close`} />
-          </svg> */}
         </button>
         <div className={css.content}>
           <img className={css.image} src={img} alt={model} />
