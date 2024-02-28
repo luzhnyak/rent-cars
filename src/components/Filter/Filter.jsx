@@ -37,6 +37,10 @@ const Filter = () => {
       return;
     }
 
+    if (params.make === item) {
+      return;
+    }
+
     dispatch(resetCars());
 
     if (item === "All") {
