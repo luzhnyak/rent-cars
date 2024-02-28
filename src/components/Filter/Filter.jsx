@@ -66,7 +66,7 @@ const Filter = () => {
         <span className={css.label}>Car brand</span>
         <Dropdown
           items={filterBrandOptions}
-          defaultSelect={params?.make || "Enter the text"}
+          defaultSelect={params?.make || "Select brand"}
           onSelect={handleSelectBrand}
         />
       </div>
