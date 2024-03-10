@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import css from "./Dropdown.module.css";
 import Icon from "../Icon/Icon";
 
-const ListDropdown = ({ items, onSelect, onClose }) => {
+const ListDropdown = React.forwardRef(({ items, onSelect, onClose }, ref) => {
   const listRef = useRef(null);
 
   useEffect(() => {
@@ -14,7 +14,12 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
     };
 
     const handleClose = (event) => {
-      if (listRef.current && !listRef.current.contains(event.target)) {
+      if (
+        listRef.current &&
+        !listRef.current.contains(event.target) &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
         onClose(false);
       }
     };
@@ -40,11 +45,13 @@ const ListDropdown = ({ items, onSelect, onClose }) => {
       </ul>
     </div>
   );
-};
+});
 
 const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
   const [isOpenList, setIsOpenList] = useState(false);
   const [selectText, setSelectText] = useState(defaultSelect);
+
+  const btnRef = useRef(null);
 
   const handleSelect = (item) => {
     onSelect(item);
@@ -54,7 +61,13 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
 
   return (
     <div className={css.wrapper}>
-      <button className={css.btn} onClick={() => setIsOpenList(!isOpenList)}>
+      <button
+        className={css.btn}
+        onClick={() => {
+          setIsOpenList(!isOpenList);
+        }}
+        ref={btnRef}
+      >
         {selectText}
         <Icon id="icon-dropdown" width="20" height="20" />
       </button>
@@ -63,6 +76,7 @@ const Dropdown = ({ items = [], defaultSelect, onSelect }) => {
           items={items}
           onSelect={handleSelect}
           onClose={() => setIsOpenList(false)}
+          ref={btnRef}
         />
       )}
     </div>
