@@ -50,7 +50,7 @@ const Modal = ({ onClose, data }) => {
     document.body.classList.add("body-scroll-lock");
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.addEventListener("mousedown", handleClose);
+      document.removeEventListener("mousedown", handleClose);
       document.body.classList.remove("body-scroll-lock");
     };
   }, [onClose]);
