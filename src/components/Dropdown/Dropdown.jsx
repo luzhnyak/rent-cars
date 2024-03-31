@@ -28,7 +28,7 @@ const ListDropdown = React.forwardRef(({ items, onSelect, onClose }, ref) => {
     document.addEventListener("mousedown", handleClose);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.addEventListener("mousedown", handleClose);
+      document.removeEventListener("mousedown", handleClose);
     };
   }, [onClose]);
 
