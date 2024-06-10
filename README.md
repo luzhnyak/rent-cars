@@ -1,48 +1,77 @@
-# Тестове завдання
+# Rent cars
 
-Створити застосунок для компанії, що надає послуги надання в Україні автомобілів в оренду. Застосунок складається з 3х сторінок:
+![Main page screenshot](./public/rent-cars.jpg)
 
-- домашня сторінка з загальним описом послуг, що надає компанія. Стилізація та оформлення на ваш розсуд.
-- сторінка, що містить каталог автівок різної комплектації, які користувач може фільтрувати за маркою, ціною за годину оренди авто та кількістю кілометрів, яку подолав автомобіль під час його експлуатації (пробіг).
-- сторінка з оголошеннями, які були додані користувачем в улюблені Зовнішній вигляд програми повинен складатися з навігації(оформлення на ваш розсуд) та області перегляду.
+Welcome to Rent cars! This is a sample project showcasing a car rental
+application.
 
-## Технічне завдання
+## Overview
 
-1. Відповідно до макету реалізувати картку оголошення про здачу авто в оренду.
-2. На першій сторінці каталогу має рендеритися 12 оголошень, а їх решта - по кліку на кнопку Load more.
-3. У разі кліку по кнопці у вигляді “серця” на картці оголошення воно має додаватися до списку улюблених, а колір кнопки змінюватися.
-4. При оновленні сторінки має фіксуватись кінцевий результат дій користувача. Тобто, якщо додати оголошення в улюблені та оновити сторінку - то кнопка все одно залишається в стані “улюбленого оголошення” із відповідним кольором.
-5. У разі повторного кліку по кнопці у вигляді “серця” оголошення повинно бути видалене зі списку улюблених, а колір кнопки змінитись до початкового стану.
-6. У разі кліку по кнопці Learn more має відкриватись модальне вікно з детальною інформацією про авто та умови його оренди.
-7. Модальне вікно повинно закриватись по кліку на кнопку у вигляді “хрестика”, по кліку на backdrop або натисканню на клавішу Esc.
-8. В коді пробіг авто має бути прописаний одним значенням (наприклад, 4500). В UI - виведено через кому (4,500).
-9. Кнопку Rental car слід реалізувати як посилання, що надаватиме можливість користувачу зʼєднатись з компанією за номером телефону +380730000000.
-10. Додай фільтрацію. dropdown із марками автомобіля makes.json - показати оголошення з автівками відповідної марки
+Rent cars is a React-based web application that allows users to browse
+a catalog of cars, view car details, add cars to their favorites, and search for
+specific cars based on filters.
 
-Створи маршрутизацію, використовуючи React Router. У застосунку повинні бути такі маршрути: “/” - домашня сторінка з загальним описом послуг, що надає компанія “/catalog” - сторінка, що містить каталог автівок різної комплектації “/favorites” - сторінка з оголошеннями, які були додані користувачем в улюблені Якщо користувач зайшов за маршрутом, якого не існує, його необхідно перенаправляти на домашню сторінку.
+## Live Demo
 
-Для роботи зі списком оголошень створи свій персональний бекенд для розробки за допомогою UI-сервісу https://mockapi.io/. Створи ресурс adverts. Використай конструктор ресурсу та опиши об'єкт оголошення, як описано нижче.
+Check out the live demo:
+[Rent cars](https://luzhnyak.github.io/rent-cars)
 
-Advert
+## Features
 
-1. Створіть advert в Mockapi з наступними полями: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage (див. скріншот нижче). Забороняється додавати нові поля! Для наповнення колекції можна взяти adverts.json. Якщо даних не вистачає, або вони не повні - будь ласка, додайте їх самостійно.
-2. Зображення авто можете підібрати самостійно.
-В базі має бути від 32 оголошень з різними значеннями (на ваш розсуд). Реалізована пагінація, де одна сторінка пагінації повинна вміщати 12 оголошень.Пагінація має бути реалізована на стороні Mockapi
+- Browse a catalog of cars
+- View detailed information about each car
+- Add cars to favorites
+- Search for cars based on filters (make, price, mileage)
 
-## Додай фільтрацію:
-dropdown із марками автомобіля makes.json - показати оголошення з автівками відповідної марки
+## Technologies Used
 
-## Додаткове завдання
-1. dropdown із цінами за годину оренди авто (крок 10$) - показати оголошення з автівками, ціна за оренду яких належить до діапазону цін, обраних користувачем
-2. група inputів для визначення діапазону пробігу, в межах якого користувач шукатиме оголошення
+`JavaScript` `React` `ReduxToolkit` `ReduxPersist` `Axios` `HTML/CSS`
+`MockAPI for data` `React router dom`
 
-## Критерії виконання
-- Верстка фіксована в рх, семантична та валідна.
-- Обов’язкове використання Redux
-- Для запитів використовується бібліотека Axios
-- Пагінація реалізована на бекенді
-- Немає помилок в консолі браузера.
-- Інтерактивність працює відповідно до технічного завдання.
-- Код відформатовано та не містить невикористовуваного коду
-- В репозиторії має бути описаний README.md.
-- Проєкт задеплоїний на github pages або netlify.com.
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+
+   `git clone https://github.com/luzhnyak/rent-cars.git`
+
+2. Navigate to the project directory:
+
+   `cd rent-cars`
+
+3. Install dependencies:
+
+   `npm install`
+
+4. Start the development server:
+
+   `npm run start`
+
+5. Open your browser and visit http://localhost:5173 to view the application.
+
+## Deployment
+
+The project is deployed using GitHub Pages. The deployment process involves
+building the React application and configuring GitHub Pages to serve the built
+assets from the gh-pages branch.
+
+To deploy the application to GitHub Pages:
+
+1. Make sure you have set up your GitHub repository with the correct settings
+   for GitHub Pages deployment.
+
+2. Run the following command to build the application:
+
+'npm run build'
+
+3. Once the build process is complete, commit and push the changes to your
+   GitHub repository.
+
+4. GitHub Pages will automatically deploy the application, and it will be
+   accessible at https://<username>.github.io/rent-cars.
+
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for
+improvements, please open an issue or submit a pull request.
